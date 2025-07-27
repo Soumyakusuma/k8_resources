@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: learnlabels
+  labels:
+    name: roboshop
+    project: roboshop
+    Environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+      - name: soumya
+        course: devops
+      - learn: course
+        subject: to learn and improve
