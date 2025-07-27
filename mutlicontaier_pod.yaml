@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: multicontainer Pod
+  labels:
+    name: multicontaoner Pod
+spec:
+  containrt: 
+  - name: nginx
+    image: nginx
+  - name: almlalinux
+    image: almlalinux
+    comtainer: ["sleep", "1000"]
+
