@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: labels
+  name: learn_labels
   labels:
     name: roboshop
     project: roboshop
