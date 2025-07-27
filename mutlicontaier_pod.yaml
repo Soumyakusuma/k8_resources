@@ -5,10 +5,10 @@ metadata:
   labels:
     name: multicontaoner Pod
 spec:
-  containrt: 
+  container: 
   - name: nginx
     image: nginx
-  - name: almlalinux
-    image: almlalinux
-    comtainer: ["sleep", "1000"]
+  - name: almalinux
+    image: almalinux
+    container: ["sleep", "1000"]
 
