@@ -10,5 +10,5 @@ spec:
     image: nginx
   - name: almalinux
     image: almalinux
-    containers: ["sleep", "1000"]
+    command: ["sleep", "1000"]
 
