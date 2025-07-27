@@ -12,6 +12,6 @@ spec:
     image: nginx
     env:
       - name: soumya
-        course: devops
+        value: devops
       - learn: course
-        subject: to learn and improve
+        value: to learn and improve
