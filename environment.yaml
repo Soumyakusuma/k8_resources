@@ -13,5 +13,5 @@ spec:
     env:
       - name: soumya
         value: devops
-      - learn: course
+      - name: course
         value: to learn and improve
