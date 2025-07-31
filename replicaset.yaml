@@ -10,7 +10,6 @@ spec:
   selector:
     matchLables:
       name: roboshop
-      environment: dev
   template:
     metadata:
       name: roboshop
