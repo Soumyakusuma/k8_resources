@@ -1,5 +1,4 @@
 apiVersion: v1
-Namespace: roboshop
 kind: Pod
 metadata:
   name: service-demo
