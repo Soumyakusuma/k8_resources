@@ -2,7 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: servicedemo
-  labels: servicedemo
+  labels: 
+    name: servicedemo
 spec:
   selector:
     name: roboshop
