@@ -12,7 +12,7 @@ spec:
       name: roboshop
   template:
     metadata:
-      name: roboshop
+      labels: roboshop
     spec:
       containers:
       - name: nginx
