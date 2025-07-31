@@ -10,11 +10,12 @@ spec:
   selector:
     matchLables:
       name: roboshop
-      environment: dev
+      type: replica_pract
   template:
     metadata:
       labels: 
         name: roboshop
+        type: replica_pract
     spec:
       containers:
       - name: nginx
