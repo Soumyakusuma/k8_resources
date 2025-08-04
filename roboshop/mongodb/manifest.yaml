@@ -8,7 +8,7 @@ metadata:
     environment: dev
     type: database
 spec:
-  replicas: 3
+  replicas: 1
   selector: # These are the labels replica set use to create pod replicas, this should match pod labels
     matchLabels:
       name: mongodb
