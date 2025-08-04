@@ -7,7 +7,7 @@ metadata:
     environment: dev
     type: app
 data:
-  MONGO: "true" \
+  MONGO: "true" 
   MONGO_URL: "mongodb://mongodb:27017/catalogue"
 
 ---
