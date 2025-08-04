@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+Namespace: roboshop
 metadata:
   name: mongodb
   labels: #repica set labels
@@ -26,6 +27,7 @@ spec:
 ---
 apiVersion: v1
 kind: Service
+Namespace: roboshop
 metadata:
   name: mongodb
   labels: 
