@@ -20,7 +20,7 @@ spec:
           - key: hardware
             operator: In  
             values:
-            - cpu
+            - cpuu
   containers:
   - name: with-node-affinity
     image: nginx
