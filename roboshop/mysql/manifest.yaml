@@ -9,7 +9,7 @@ metadata:
     type: database
 type: Opaque
 data:
-  MY_SQL_ROOT_PASSWORD: 'RoboShop@1'
+  MY_SQL_ROOT_PASSWORD: 'Um9ib1Nob3BAMQ==''
 ---
 apiVersion: apps/v1
 kind: Deployment
