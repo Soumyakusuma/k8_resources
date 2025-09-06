@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: frontend-configmap
+  name: nginx-conf
   namespace: roboshop
   labels:
-    name: frontend
-    environment: dev
-    type: web
+    component: frontend
+    project: roboshop
+    tier: web
 data:
   nginx.conf: |
     user nginx;
@@ -71,57 +71,65 @@ data:
 
         }
     }
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
   namespace: roboshop
-  labels: #repica set labels
-    name: frontend
-    environment: dev
-    type: web
+  # deployment labels
+  labels:
+    component: frontend
+    project: roboshop
+    tier: web
 spec:
   replicas: 1
-  selector: # These are the labels replica set use to create pod replicas, this should match pod labels
+  # These are the labels replica set use to create pod replicas, this should match pod labels
+  selector:
     matchLabels:
-      name: frontend
-      environment: dev
-      type: web
-  template: # This is pod definition
+      component: frontend
+      project: roboshop
+      tier: web
+  # This is pod definition
+  template:
     metadata:
-      name: frontend
-      labels: 
-        name: frontend
-        environment: dev
-        type: web
+      labels:
+        component: frontend
+        project: roboshop
+        tier: web
     spec:
       containers:
       - name: frontend
         image: kusumasoumya/frontend:v1
-        envFrom:
-        - configMapRef:
-            name: frontend-configmap
+        volumeMounts:
+        - name: nginx-conf
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+          readOnly: true
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend
   namespace: roboshop
-  labels: 
-    name: frontend
-    environment: dev
-    type: web
+  labels:
+    component: frontend
+    project: roboshop
+    tier: web
 spec:
   type: LoadBalancer
   selector:
-    name: frontend
-    environment: dev
-    type: web
+    component: frontend
+    project: roboshop
+    tier: web
   ports:
-    - protocol: TCP
-      port: 80 #service port
-      targetPort: 8080 #container port
-
-
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 8080 # container port
