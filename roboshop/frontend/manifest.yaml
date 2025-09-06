@@ -114,6 +114,7 @@ metadata:
     environment: dev
     type: web
 spec:
+  type: LoadBalancer
   selector:
     name: frontend
     environment: dev
