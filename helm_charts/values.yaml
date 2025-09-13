@@ -1,0 +1,6 @@
+deployment:
+  repliacs: 3
+  image_version: latest
+
+service:
+  targetPort: 80
